@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dqcp3roobdfdb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rowsq"]
+size = Vector2(11, 70)
+
+[node name="Paddle" type="Node2D" unique_id=93831153]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=96644476]
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D" unique_id=1980010181]
+offset_right = 11.0
+offset_bottom = 70.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1626735809]
+position = Vector2(5.5, 35)
+shape = SubResource("RectangleShape2D_rowsq")
