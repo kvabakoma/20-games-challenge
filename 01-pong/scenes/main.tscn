@@ -20,12 +20,12 @@ position = Vector2(0, 280)
 [node name="Paddle2" parent="." unique_id=595449313 instance=ExtResource("2_0wfyh")]
 position = Vector2(1141, 280)
 
+[node name="Ball" parent="." unique_id=1690765154 instance=ExtResource("4_jyhfs")]
+position = Vector2(587, 315)
+
 [node name="Line2D" type="Line2D" parent="." unique_id=1150474114]
-position = Vector2(282, 73)
+position = Vector2(273, 73)
 points = PackedVector2Array(314, -72, 314, 217, 314, 570)
 default_color = Color(1, 1, 1, 0.18039216)
 texture = ExtResource("3_sugp2")
 texture_mode = 1
-
-[node name="Ball" parent="." unique_id=1690765154 instance=ExtResource("4_jyhfs")]
-position = Vector2(596, 308)

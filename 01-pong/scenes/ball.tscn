@@ -2,15 +2,23 @@
 
 [ext_resource type="Texture2D" uid="uid://ddly7op1kswc4" path="res://assets/sprites/ball.png" id="1_7s4qf"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tbgi4"]
+friction = 0.0
+bounce = 1.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_rowsq"]
+radius = 13.0
 
 [node name="Ball" type="Node2D" unique_id=1690765154]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=326050107]
-scale = Vector2(0.1, 0.1)
+physics_material_override = SubResource("PhysicsMaterial_tbgi4")
+gravity_scale = 0.0
+can_sleep = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=903518264]
 shape = SubResource("CircleShape2D_rowsq")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=165379341]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_7s4qf")
