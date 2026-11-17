@@ -20,7 +20,7 @@ position = Vector2(0, 626)
 position = Vector2(0, 280)
 
 [node name="Paddle2" parent="." unique_id=595449313 instance=ExtResource("2_0wfyh")]
-position = Vector2(1141, 280)
+position = Vector2(1140, 259)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1150474114]
 position = Vector2(273, 73)
