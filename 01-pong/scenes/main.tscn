@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bxknwmgmvp870" path="res://scenes/boundary.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bv7yp5nd0288b" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dqcp3roobdfdb" path="res://scenes/paddle.tscn" id="2_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://dqf3epw8aplk2" path="res://assets/sprites/dash16.png" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://lflf7nbnhhfy" path="res://scenes/ball.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://ckidonbm0mhe1" path="res://scenes/ball.tscn" id="4_jyhfs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jyhfs"]
+load_path = "res://.godot/imported/dash16.png-90b33daa86dff3fcb3da72a235c7a4d7.ctex"
 
 [node name="Main" type="Node2D" unique_id=1238275539]
 script = ExtResource("1_tbgi4")
@@ -20,12 +22,12 @@ position = Vector2(0, 280)
 [node name="Paddle2" parent="." unique_id=595449313 instance=ExtResource("2_0wfyh")]
 position = Vector2(1141, 280)
 
-[node name="Ball" parent="." unique_id=1690765154 instance=ExtResource("4_jyhfs")]
-position = Vector2(587, 315)
-
 [node name="Line2D" type="Line2D" parent="." unique_id=1150474114]
 position = Vector2(273, 73)
 points = PackedVector2Array(314, -72, 314, 217, 314, 570)
 default_color = Color(1, 1, 1, 0.18039216)
-texture = ExtResource("3_sugp2")
+texture = SubResource("CompressedTexture2D_jyhfs")
 texture_mode = 1
+
+[node name="Ball" parent="." unique_id=597835635 instance=ExtResource("4_jyhfs")]
+position = Vector2(587, 313)
