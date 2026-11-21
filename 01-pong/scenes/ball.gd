@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var default_speed: float = 400.0
+@export var max_bounce_angle: float = 45
 var speed: float = 0.0
 var direction: Vector2 = Vector2.ZERO
 
@@ -11,18 +12,22 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:		
+func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(direction * speed * delta)
 	if collision:
-		#print("I collided with ", collision.get_collider().name)
-		if collision.get_collider().is_in_group("boundaries"):
+		var collider = collision.get_collider()
+		if collider.is_in_group("boundaries"):
 			print("hit a boundary")
 			direction = direction.bounce(collision.get_normal())
-			speed 
 		else:
 			print("hit a paddle")
-			direction = direction.bounce(collision.get_normal())
-		
+			var collider_body = collider.get_node("CollisionShape2D")
+			var collider_height: int = collider_body.shape.size.y
+			var hit_pos_y: int = int(self.position.y - collider.position.y)
+			
+			# TODO
+			var dir := Vector2.from_angle(deg_to_rad(45.0))
+			
 		speed += default_speed * 0.05
 
 func start(start_direction: int) -> void:
