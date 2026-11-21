@@ -17,12 +17,11 @@ script = ExtResource("1_tbgi4")
 position = Vector2(0, 626)
 
 [node name="Paddle" parent="." unique_id=93831153 instance=ExtResource("2_0wfyh")]
-position = Vector2(0, 27)
-scale = Vector2(1, 8.52)
+position = Vector2(0, 283)
 
 [node name="Paddle2" parent="." unique_id=595449313 instance=ExtResource("2_0wfyh")]
-position = Vector2(1140, 29)
-scale = Vector2(1, 8.4)
+position = Vector2(1140, 279)
+player_id = 2
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1150474114]
 position = Vector2(273, 73)

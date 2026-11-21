@@ -17,17 +17,15 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		var collider = collision.get_collider()
 		if collider.is_in_group("boundaries"):
-			print("hit a boundary")
 			direction = direction.bounce(collision.get_normal())
 		else:
-			print("hit a paddle")
 			var collider_body = collider.get_node("CollisionShape2D")
-			var collider_height: int = collider_body.shape.size.y
-			var hit_pos_y: int = int(self.position.y - collider.position.y)
-			
-			# TODO
-			var dir := Vector2.from_angle(deg_to_rad(45.0))
-			
+			var collider_height: float = collider_body.shape.size.y * absf(collider_body.global_scale.y)
+			var hit_offset: float = (global_position.y - collider_body.global_position.y) / (collider_height * 0.5)
+			hit_offset = clampf(hit_offset, -1.0, 1.0)
+			var bounce_angle: float = hit_offset * max_bounce_angle * signf(collision.get_normal().x)
+			direction = collision.get_normal().rotated(deg_to_rad(bounce_angle)).normalized()
+			 
 		speed += default_speed * 0.05
 
 func start(start_direction: int) -> void:

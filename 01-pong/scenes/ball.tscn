@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckidonbm0mhe1"]
 
-[ext_resource type="Script" uid="uid://8vs8vex7svfk" path="res://scenes/ball.gd" id="1_cxlvu"]
+[ext_resource type="Script" uid="uid://8vs8vex7svfk" path="res://scripts/ball.gd" id="1_cxlvu"]
 [ext_resource type="Texture2D" uid="uid://ddly7op1kswc4" path="res://assets/sprites/ball.png" id="1_x8fbi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lpqsk"]
