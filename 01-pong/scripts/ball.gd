@@ -2,11 +2,14 @@ extends CharacterBody2D
 
 @export var default_speed: float = 400.0
 @export var max_bounce_angle: float = 45
+
 var speed: float = 0.0
 var direction: Vector2 = Vector2.ZERO
+var start_pos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	start_pos = global_position
 	set_physics_process(false)
 	start(1)
 
@@ -25,8 +28,12 @@ func _physics_process(delta: float) -> void:
 			hit_offset = clampf(hit_offset, -1.0, 1.0)
 			var bounce_angle: float = hit_offset * max_bounce_angle * signf(collision.get_normal().x)
 			direction = collision.get_normal().rotated(deg_to_rad(bounce_angle)).normalized()
+
+			collider.get_hit()
+
 			 
 		speed += default_speed * 0.05
+		
 
 func start(start_direction: int) -> void:
 	var random_deg: float = randf_range(-15.0, 15.0)
@@ -37,3 +44,7 @@ func start(start_direction: int) -> void:
 	
 func enable(new_status: bool) -> void:
 	set_physics_process(new_status)
+
+
+func reset_position() -> void:
+	position = start_pos

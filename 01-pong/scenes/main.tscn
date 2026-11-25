@@ -27,7 +27,7 @@ position = Vector2(1167, 321)
 scale = Vector2(1, 37.479996)
 player = 2
 
-[node name="Paddle" parent="." unique_id=93831153 instance=ExtResource("2_0wfyh")]
+[node name="Paddle1" parent="." unique_id=93831153 instance=ExtResource("2_0wfyh")]
 position = Vector2(0, 283)
 
 [node name="Paddle2" parent="." unique_id=595449313 instance=ExtResource("2_0wfyh")]
